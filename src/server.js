@@ -4,7 +4,10 @@ import Express from "express";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { match, RouterContext } from "react-router";
+import { Provider } from "react-redux";
 import routes from "./routes";
+import { store } from "./store";
+import serverRoutes from "./server/routes";
 import NotFoundPage from "./components/notFoundPage";
 
 // initialize the server and configure support for ejs templates
@@ -15,6 +18,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, "static")));
+
+// Server-side logic for routes
+app.use("/", serverRoutes);
 
 // universal routing and rendering
 app.get("*", (req, res) => {
@@ -35,7 +41,11 @@ app.get("*", (req, res) => {
       let markup;
       if (renderProps) {
         // if the current route matched we have renderProps
-        markup = renderToString(<RouterContext {...renderProps}/>);
+        markup = renderToString(
+          <Provider store={store}>
+            <RouterContext {...renderProps}/>
+          </Provider>
+        );
       } else {
         // otherwise we can render a 404 page
         markup = renderToString(<NotFoundPage/>);
@@ -43,7 +53,7 @@ app.get("*", (req, res) => {
       }
 
       // render the index template with the embedded React markup
-      return res.render("index", { markup });
+      return res.render("index", { markup, data: JSON.stringify(res.locals) });
     }
   );
 });

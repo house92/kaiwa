@@ -9,4 +9,8 @@ const Show = sequelize.define("show", {
 
 // Show.belongsToMany(Genre, {through: "ShowGenre"});
 
+Show.all = async () => {
+    return await Show.findAll();
+};
+
 export default Show;

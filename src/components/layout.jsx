@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actionCreators from "../actions/actionCreators";
 
-export default class Layout extends Component {
+class Layout extends Component {
   render() {
     return (
       <div className="wrap">
@@ -25,7 +28,7 @@ export default class Layout extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        {this.props.children}
+        {React.cloneElement(this.props.children, this.props)}
       </div>
     );
   }
@@ -34,3 +37,15 @@ export default class Layout extends Component {
 Layout.propTypes = {
     children: PropTypes.any.isRequired
 };
+
+function mapStateToProps(state) {
+    return {
+      shows: state.shows
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
