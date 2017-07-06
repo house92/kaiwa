@@ -7,7 +7,8 @@ html body {
   font-size: 14px;
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
   background-color: #131313 !important;
-  background-size: 20px 20px; }
+  background-size: 20px 20px;
+  padding-bottom: 5rem; }
 
 a.button {
   -webkit-border-radius: 5px;
@@ -42,3 +43,19 @@ div[class*=anonymous-homepage] div[class*=sign-up], div[class*=anonymous-homepag
   background-color: #3c3c3c;
   color: #fff;
   min-height: calc(285px); }
+
+.container.shows .shows-grid {
+  background-color: #151515; }
+  .container.shows .shows-grid .slider, .container.shows .shows-grid .slider .slider-frame {
+    min-height: 30rem; }
+  .container.shows .shows-grid .show-tile {
+    height: 30rem;
+    display: inline-block;
+    padding: 1rem;
+    margin: 0 2rem;
+    text-align: center;
+    color: #fff; }
+    .container.shows .shows-grid .show-tile img {
+      height: calc(100% - 3rem); }
+    .container.shows .shows-grid .show-tile > div {
+      margin: 1rem auto; }

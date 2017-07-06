@@ -1,0 +1,39 @@
+@import 'colours';
+$tile-padding: 1rem;
+$tile-margin: 2rem;
+
+// !!!!!!!!!!
+//
+// SHOWS
+//
+// !!!!!!!!!!
+
+.container.shows {
+    .shows-grid {
+        background-color: map-get($colours, dark-background);
+
+        .slider {
+            &, .slider-frame {
+                min-height: 30rem;
+            }
+        }
+
+        .show-tile {
+            height: 30rem;
+            display: inline-block;
+            padding: $tile-padding;
+            margin: 0 $tile-margin;
+            text-align: center;
+            color: #fff;
+
+            img {
+                height: calc(100% - #{$tile-padding + $tile-margin});
+            }
+            & > div {
+            //     position: relative;
+            //     top: calc(100% - #{$tile-padding + $tile-margin});
+                margin: 1rem auto;
+            }
+        }
+    }
+}
