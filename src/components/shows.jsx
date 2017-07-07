@@ -15,7 +15,7 @@ export default class Shows extends Component {
         this.setSlidesToScroll = this.setSlidesToScroll.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         axios.get("/api/shows.json")
             .then(res => {
                 console.log(res.data);

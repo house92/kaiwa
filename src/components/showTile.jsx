@@ -4,10 +4,10 @@ export default class ShowTile extends Component {
     render() {
         const show = this.props.show;
         return (
-            <div className="show-tile">
+            <a className="show-tile" href={`/shows/${show.id}`}>
                 <img src={`/images/${show.image}`} />
                 <div>{show.name}</div>
-            </div>
+            </a>
         );
     }
 }

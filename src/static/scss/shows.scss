@@ -9,6 +9,9 @@ $tile-margin: 2rem;
 // !!!!!!!!!!
 
 .container.shows {
+    h1 {
+        color: #fff;
+    }
     .shows-grid {
         background-color: map-get($colours, dark-background);
 
@@ -35,5 +38,21 @@ $tile-margin: 2rem;
                 margin: 1rem auto;
             }
         }
+    }
+}
+
+// !!!!!!!!!!
+//
+// SHOW PAGE
+//
+// !!!!!!!!!!
+
+.show-page {
+    background-color: map-get($colours, dark-background);
+    padding: 0 3rem 3rem;
+    color: #fff;
+
+    img {
+        width: 100%;
     }
 }

@@ -18,31 +18,36 @@ a.button {
 nav {
   font-family: "Philosopher", "Open Sans", sans-serif !important;
   font-size: 18px !important; }
-  nav a[class=navbar-brand] {
-    padding: 0 15px 0 0 !important; }
-    nav a[class=navbar-brand] img {
-      height: 85%; }
+  nav a.navbar-brand {
+    margin-left: 0 !important;
+    padding: 0 !important; }
+    nav a.navbar-brand img {
+      height: 85%;
+      margin-top: 2.5%; }
   nav a {
     color: #E53D14 !important; }
     nav a:hover {
       text-shadow: 0 0 1rem #E53D14 !important; }
 
-div[class*=anonymous-homepage] h2 {
+.anonymous-homepage h2 {
   font-size: 16px;
   text-transform: uppercase;
   padding: 2rem 0; }
 
-div[class*=anonymous-homepage] div[class*=welcome] {
+.anonymous-homepage .welcome {
   text-align: center;
   background-color: #3c3c3c;
   color: #fff;
   min-height: 600px; }
 
-div[class*=anonymous-homepage] div[class*=sign-up], div[class*=anonymous-homepage] div[class*=about] {
+.anonymous-homepage .sign-up, .anonymous-homepage .about {
   text-align: center;
   background-color: #3c3c3c;
   color: #fff;
   min-height: calc(285px); }
+
+.container.shows h1 {
+  color: #fff; }
 
 .container.shows .shows-grid {
   background-color: #151515; }
@@ -59,3 +64,10 @@ div[class*=anonymous-homepage] div[class*=sign-up], div[class*=anonymous-homepag
       height: calc(100% - 3rem); }
     .container.shows .shows-grid .show-tile > div {
       margin: 1rem auto; }
+
+.show-page {
+  background-color: #151515;
+  padding: 0 3rem 3rem;
+  color: #fff; }
+  .show-page img {
+    width: 100%; }
