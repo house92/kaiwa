@@ -69,6 +69,13 @@ nav {
   background-color: #151515;
   padding: 0 3rem 3rem;
   color: #fff; }
+  .show-page .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; }
+    .show-page .content [class^="col"] {
+      display: flex;
+      flex-flow: column nowrap; }
   .show-page img {
     width: 100%; }
   .show-page .star-ratings-css {
@@ -79,7 +86,8 @@ nav {
     width: 125px;
     margin: 0 auto;
     position: relative;
-    padding: 0; }
+    padding: 0;
+    margin-top: 2rem; }
     .show-page .star-ratings-css-top {
       color: #E53D14;
       padding: 0;
@@ -101,3 +109,26 @@ nav {
         width: 100% !important; }
     .show-page .star-ratings-css span:hover ~ span {
       color: #c5c5c5; }
+  .show-page .buttons {
+    margin-top: auto; }
+    .show-page .buttons .btn {
+      width: 100%;
+      background-image: none;
+      background-color: #3c3c3c;
+      color: #E53D14;
+      text-shadow: none;
+      border-radius: 0;
+      border-color: #1A1A1A;
+      text-transform: uppercase;
+      font-size: 12px; }
+      .show-page .buttons .btn:focus {
+        background-color: #3c3c3c;
+        color: #E53D14;
+        outline: none; }
+      .show-page .buttons .btn:active, .show-page .buttons .btn:focus:active {
+        background-color: #1A1A1A;
+        color: #E53D14;
+        border-color: #1A1A1A;
+        outline: none; }
+      .show-page .buttons .btn .glyphicon {
+        margin-right: 1rem; }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, Button, Glyphicon } from "react-bootstrap";
 import axios from "axios";
 
 export default class ShowPage extends Component {
@@ -26,7 +26,7 @@ export default class ShowPage extends Component {
                                 <h1>{show.name}</h1>
                             </Col>
                         </Row>
-                        <Row>
+                        <Row className="content">
                             <Col md={4}>
                                 <img src={`/images/${show.image}`} />
                             </Col>
@@ -47,6 +47,15 @@ export default class ShowPage extends Component {
                                         <span>★</span>
                                         <span>★</span>
                                     </div>
+                                </div>
+
+                                <div className="buttons">
+                                    <Col xs={12} sm={10} smOffset={1} md={4} mdOffset={1}>
+                                        <Button className="add-to-list"><Glyphicon glyph="plus-sign" />Add to list</Button>
+                                    </Col>
+                                    <Col xs={12} sm={10} smOffset={1} md={4} mdOffset={2} >
+                                        <Button className="suggest-to-friend"><Glyphicon glyph="send" />Suggest to friend</Button>
+                                    </Col>
                                 </div>
                             </Col>
                         </Row>
