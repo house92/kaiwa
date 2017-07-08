@@ -27,11 +27,27 @@ export default class ShowPage extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={6}>
+                            <Col md={4}>
                                 <img src={`/images/${show.image}`} />
                             </Col>
-                            <Col md={6}>
+                            <Col md={8}>
                                 <div className="description">{show.description}</div>
+                                <div className="star-ratings-css">
+                                    <div className="star-ratings-css-top" style={{width: "90%"}}>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                    <div className="star-ratings-css-bottom">
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                     </div>

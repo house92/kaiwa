@@ -71,3 +71,33 @@ nav {
   color: #fff; }
   .show-page img {
     width: 100%; }
+  .show-page .star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 25px;
+    width: 125px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0; }
+    .show-page .star-ratings-css-top {
+      color: #E53D14;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden; }
+    .show-page .star-ratings-css-bottom {
+      padding: 0;
+      display: block;
+      z-index: 0; }
+    .show-page .star-ratings-css:hover {
+      color: yellow;
+      cursor: pointer; }
+      .show-page .star-ratings-css:hover .star-ratings-css-top {
+        color: transparent;
+        width: 100% !important; }
+    .show-page .star-ratings-css span:hover ~ span {
+      color: #c5c5c5; }
