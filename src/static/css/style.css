@@ -49,20 +49,24 @@ nav {
 .container.shows h1 {
   color: #fff; }
 
-.container.shows .shows-grid {
+.container.shows .shows-grid .genre {
+  margin: 2rem 0;
   background-color: #151515; }
-  .container.shows .shows-grid .slider, .container.shows .shows-grid .slider .slider-frame {
+  .container.shows .shows-grid .genre h2 {
+    padding: 1rem 30px;
+    color: #fff; }
+  .container.shows .shows-grid .genre .slider, .container.shows .shows-grid .genre .slider .slider-frame {
     min-height: 30rem; }
-  .container.shows .shows-grid .show-tile {
+  .container.shows .shows-grid .genre .show-tile {
     height: 30rem;
     display: inline-block;
     padding: 1rem;
     margin: 0 2rem;
     text-align: center;
     color: #fff; }
-    .container.shows .shows-grid .show-tile img {
+    .container.shows .shows-grid .genre .show-tile img {
       height: calc(100% - 3rem); }
-    .container.shows .shows-grid .show-tile > div {
+    .container.shows .shows-grid .genre .show-tile > div {
       margin: 1rem auto; }
 
 .show-page {

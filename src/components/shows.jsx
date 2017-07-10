@@ -16,10 +16,10 @@ export default class Shows extends Component {
     }
 
     componentWillMount() {
-        axios.get("/api/shows.json")
+        axios.get("/api/genres.json")
             .then(res => {
                 console.log(res.data);
-                this.props.fetchShows(res.data);
+                this.props.fetchGenres(res.data);
             })
             .catch(err => {
                 console.error(err);
@@ -37,8 +37,24 @@ export default class Shows extends Component {
     }
 
     render() {
-        const shows = this.props.shows.map((show, i) => {
-            return <ShowContainer show={show} key={`show${i}`} />;
+        const genres = this.props.genres.map((genre, i) => {
+            const shows = genre.shows.map((show, i) => {
+                return <ShowContainer show={show} key={`show${i}`} />;
+            });
+            return (
+                <div className="genre">
+                    <h2>{genre.name}</h2>
+                    <Carousel
+                        slidesToShow={this.state.slidesToShow}
+                        slidesToScroll={this.state.slidesToScroll}
+                        cellSpacing={5}
+                        wrapAround={true}
+                        afterSlide={this.setSlidesToScroll}
+                    >
+                        {shows}
+                    </Carousel>
+                </div>
+            );
         });
         return (
             <Grid className="shows">
@@ -49,15 +65,7 @@ export default class Shows extends Component {
                 </Row>
                 <Row>
                     <div className="shows-grid">
-                        <Carousel
-                            slidesToShow={this.state.slidesToShow}
-                            slidesToScroll={this.state.slidesToScroll}
-                            cellSpacing={5}
-                            wrapAround={true}
-                            afterSlide={this.setSlidesToScroll}
-                        >
-                            {shows}
-                        </Carousel>
+                        {genres}
                     </div>
                 </Row>
             </Grid>

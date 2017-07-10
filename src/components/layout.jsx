@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 
-class Layout extends Component {    
+class Layout extends Component {
     render() {
         return (
             <div className="wrap">
@@ -40,7 +40,8 @@ Layout.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        shows: state.shows
+        shows: state.shows,
+        genres: state.genres
     }
 }
 

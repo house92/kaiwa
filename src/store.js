@@ -5,7 +5,8 @@ import { browserHistory } from "react-router";
 import rootReducer from "./reducers/index";
 
 const defaultState = {
-    shows: []
+    shows: [],
+    genres: []
 };
 
 export const store = compose(applyMiddleware(thunk))(createStore)(rootReducer, defaultState);

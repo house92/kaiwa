@@ -13,29 +13,36 @@ $tile-margin: 2rem;
         color: #fff;
     }
     .shows-grid {
-        background-color: map-get($colours, dark-background);
+        .genre {
+            margin: 2rem 0;
+            background-color: #151515;
 
-        .slider {
-            &, .slider-frame {
-                min-height: 30rem;
+            h2 {
+                padding: 1rem 30px;
+                color: #fff;
             }
-        }
-
-        .show-tile {
-            height: 30rem;
-            display: inline-block;
-            padding: $tile-padding;
-            margin: 0 $tile-margin;
-            text-align: center;
-            color: #fff;
-
-            img {
-                height: calc(100% - #{$tile-padding + $tile-margin});
+            .slider {
+                &, .slider-frame {
+                    min-height: 30rem;
+                }
             }
-            & > div {
-                //     position: relative;
-                //     top: calc(100% - #{$tile-padding + $tile-margin});
-                margin: 1rem auto;
+
+            .show-tile {
+                height: 30rem;
+                display: inline-block;
+                padding: $tile-padding;
+                margin: 0 $tile-margin;
+                text-align: center;
+                color: #fff;
+
+                img {
+                    height: calc(100% - #{$tile-padding + $tile-margin});
+                }
+                & > div {
+                    //     position: relative;
+                    //     top: calc(100% - #{$tile-padding + $tile-margin});
+                    margin: 1rem auto;
+                }
             }
         }
     }

@@ -4,3 +4,10 @@ export function fetchShows(shows) {
         shows
     }
 }
+
+export function fetchGenres(genres) {
+    return {
+        type: "FETCH_GENRES",
+        genres
+    }
+}
