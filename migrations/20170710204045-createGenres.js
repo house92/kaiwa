@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.createTable("shows", {
+    queryInterface.createTable("genres", {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
@@ -14,12 +14,11 @@ module.exports = {
         updatedAt: {
           type: Sequelize.DATE
         },
-        name: Sequelize.STRING,
-        description: Sequelize.TEXT
-    });
+        name: Sequelize.STRING
+    })
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.dropTable("shows");
+    queryInterface.dropTable("genres");
   }
 };
