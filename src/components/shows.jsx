@@ -1,60 +1,23 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import axios from "axios";
-import Carousel from "nuka-carousel";
 import Layout from "./layout";
-import ShowContainer from "./showContainer";
+import GenreCarousel from "./genreCarousel";
 
 export default class Shows extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            slidesToShow: 4,
-            slidesToScroll: 4
-        };
-        this.setSlidesToScroll = this.setSlidesToScroll.bind(this);
-    }
-
     componentWillMount() {
         axios.get("/api/genres.json")
             .then(res => {
-                console.log(res.data);
                 this.props.fetchGenres(res.data);
             })
             .catch(err => {
                 console.error(err);
             });
     }
-
-    setSlidesToScroll(index) {
-        const numShows = this.props.shows.length;
-        const numDisplays = Math.ceil(numShows / this.state.slidesToShow);
-        if (index / this.state.slidesToShow == numDisplays - 1) {
-            this.setState({ slidesToScroll: numShows % this.state.slidesToShow });
-        } else {
-            this.setState({ slidesToScroll: this.state.slidesToShow });
-        }
-    }
-
+    
     render() {
         const genres = this.props.genres.map((genre, i) => {
-            const shows = genre.shows.map((show, i) => {
-                return <ShowContainer show={show} key={`show${i}`} />;
-            });
-            return (
-                <div className="genre">
-                    <h2>{genre.name}</h2>
-                    <Carousel
-                        slidesToShow={this.state.slidesToShow}
-                        slidesToScroll={this.state.slidesToScroll}
-                        cellSpacing={5}
-                        wrapAround={true}
-                        afterSlide={this.setSlidesToScroll}
-                    >
-                        {shows}
-                    </Carousel>
-                </div>
-            );
+            return <GenreCarousel genre={genre} key={`genreCarousel${i}`} />;
         });
         return (
             <Grid className="shows">

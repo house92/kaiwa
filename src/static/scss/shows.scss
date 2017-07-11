@@ -25,10 +25,21 @@ $tile-margin: 2rem;
                 &, .slider-frame {
                     min-height: 30rem;
                 }
+                [class^=slider-decorator] > div {
+                    z-index: 5;
+
+                    &:hover {
+                        background-color: rgba(250, 250, 250, 0.35) !important;
+                        cursor: pointer;
+                    }
+                    button {
+                        color: map-get($colours, brand-primary);
+                    }
+                }
             }
 
             .show-tile {
-                height: 30rem;
+                height: 30rem !important;
                 display: inline-block;
                 padding: $tile-padding;
                 margin: 0 $tile-margin;

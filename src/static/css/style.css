@@ -57,8 +57,15 @@ nav {
     color: #fff; }
   .container.shows .shows-grid .genre .slider, .container.shows .shows-grid .genre .slider .slider-frame {
     min-height: 30rem; }
+  .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div {
+    z-index: 5; }
+    .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div:hover {
+      background-color: rgba(250, 250, 250, 0.35) !important;
+      cursor: pointer; }
+    .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div button {
+      color: #E53D14; }
   .container.shows .shows-grid .genre .show-tile {
-    height: 30rem;
+    height: 30rem !important;
     display: inline-block;
     padding: 1rem;
     margin: 0 2rem;
