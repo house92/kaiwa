@@ -47,34 +47,49 @@ nav {
   min-height: calc(285px); }
 
 .container.shows h1 {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
   color: #fff; }
 
 .container.shows .shows-grid .genre {
   margin: 2rem 0;
   background-color: #151515; }
   .container.shows .shows-grid .genre h2 {
+    height: 53px;
     padding: 1rem 30px;
     color: #fff; }
   .container.shows .shows-grid .genre .slider, .container.shows .shows-grid .genre .slider .slider-frame {
     min-height: 30rem; }
-  .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div {
-    z-index: 5; }
-    .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div:hover {
-      background-color: rgba(250, 250, 250, 0.35) !important;
-      cursor: pointer; }
-    .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div button {
-      color: #E53D14; }
-  .container.shows .shows-grid .genre .show-tile {
+  .container.shows .shows-grid .genre .slider [class^=slider-decorator] {
+    transform: translateY(0) !important; }
+    .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div {
+      z-index: 5; }
+      .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div:hover {
+        background-color: rgba(250, 250, 250, 0.35) !important;
+        cursor: pointer; }
+      .container.shows .shows-grid .genre .slider [class^=slider-decorator] > div button {
+        color: #E53D14; }
+  .container.shows .shows-grid .genre .slider .show-tile {
+    width: 100%;
     height: 30rem !important;
     display: inline-block;
     padding: 1rem;
-    margin: 0 2rem;
     text-align: center;
     color: #fff; }
-    .container.shows .shows-grid .genre .show-tile img {
+    .container.shows .shows-grid .genre .slider .show-tile img {
       height: calc(100% - 3rem); }
-    .container.shows .shows-grid .genre .show-tile > div {
+    .container.shows .shows-grid .genre .slider .show-tile > div {
       margin: 1rem auto; }
+    .container.shows .shows-grid .genre .slider .show-tile:hover {
+      text-decoration: none; }
 
 .show-page {
   background-color: #151515;

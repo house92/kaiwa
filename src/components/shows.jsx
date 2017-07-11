@@ -14,7 +14,7 @@ export default class Shows extends Component {
                 console.error(err);
             });
     }
-    
+
     render() {
         const genres = this.props.genres.map((genre, i) => {
             return <GenreCarousel genre={genre} key={`genreCarousel${i}`} />;

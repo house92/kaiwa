@@ -8,18 +8,51 @@ export default class GenreCarousel extends Component {
         super(props);
         this.state = {
             slidesToShow: 4,
-            slidesToScroll: 4
+            slidesToScroll: 4,
+            currentSlide: 0
         };
         this.setSlidesToScroll = this.setSlidesToScroll.bind(this);
+        this.setSlidesAccordingToScreenSize = this.setSlidesAccordingToScreenSize.bind(this);
+        this.handleSlide = this.handleSlide.bind(this);
     }
 
     setSlidesToScroll(index) {
+        this.setState({currentSlide: index});
+    }
+
+    setSlidesAccordingToScreenSize() {
+        if (window.innerWidth > 1200) {
+            this.setState({slidesToShow: 5, slidesToScroll: 5})
+        } else if (window.innerWidth > 992) {
+            this.setState({slidesToShow: 4, slidesToScroll: 4})
+        } else if (window.innerWidth > 768) {
+            this.setState({slidesToShow: 3, slidesToScroll: 3})
+        }
+    }
+
+    componentDidMount() {
+        this.setSlidesAccordingToScreenSize();
+        let delay;
+        window.addEventListener("resize", () => {
+            clearTimeout(delay);
+            delay = setTimeout(() => {
+                this.setSlidesAccordingToScreenSize();
+            }, 10);
+        });
+    }
+
+    handleSlide(e, callback) {
         const numShows = this.props.genre.shows.length;
-        const numDisplays = Math.ceil(numShows / this.state.slidesToShow);
-        if (index / this.state.slidesToShow == numDisplays - 1) {
-            this.setState({ slidesToScroll: numShows % this.state.slidesToShow });
-        } else {
-            this.setState({ slidesToScroll: this.state.slidesToShow });
+        if (numShows % this.state.slidesToShow != 0) {
+            const decorator = e.target.tagName == "BUTTON" ? e.target.closest("div") : e.target;
+            const numDisplays = Math.ceil(numShows / this.state.slidesToShow);
+            if (this.state.currentSlide / this.state.slidesToShow == numDisplays - 1 && decorator.dataset.direction == "next") {
+                this.setState({ slidesToScroll: numShows % this.state.slidesToShow }, callback);
+            } else if (this.state.currentSlide > 0 && this.state.currentSlide <= this.state.slidesToShow && decorator.dataset.direction == "previous") {
+                this.setState({ slidesToScroll: this.state.currentSlide }, callback);
+            } else {
+                this.setState({ slidesToScroll: this.state.slidesToShow }, callback);
+            }
         }
     }
 
@@ -29,12 +62,13 @@ export default class GenreCarousel extends Component {
             return <ShowContainer show={show} key={`show${i}`} />;
         });
 
+        const handleSlide = this.handleSlide;
         const carouselDecorators = [
             {
                 component: createReactClass({
                     render() {
                         return (
-                            <div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} onClick={this.props.previousSlide}>
+                            <div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} data-direction="previous" onClick={e => handleSlide(e, this.props.previousSlide)}>
                                 <button style={{border: "none", background: "none", fontSize: "24px", marginTop: "calc(15rem + 10.5%)"}}>❮</button>
                             </div>
                         );
@@ -42,16 +76,16 @@ export default class GenreCarousel extends Component {
                 }),
                 position: "CenterLeft",
                 style: {
-                    top: "11.8rem",
+                    top: "-63px",
                     left: 0,
-                    height: "calc(30rem + 21%)"
+                    height: "calc(100% + 63px)"
                 }
             },
             {
                 component: createReactClass({
                     render() {
                         return (
-                            <div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} onClick={this.props.nextSlide}>
+                            <div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} data-direction="next" onClick={e => handleSlide(e, this.props.nextSlide)}>
                                 <button style={{border: "none", background: "none", fontSize: "24px", marginTop: "calc(15rem + 10.5%)"}}>❯</button>
                             </div>
                         );
@@ -59,9 +93,9 @@ export default class GenreCarousel extends Component {
                 }),
                 position: "CenterRight",
                 style: {
-                    top: "11.8rem",
+                    top: "-63px",
                     right: 0,
-                    height: "calc(30rem + 21%)"
+                    height: "calc(100% + 63px)"
                 }
             },
             {
