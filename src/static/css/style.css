@@ -15,6 +15,12 @@ a.button {
   -moz-border-radius: 5px;
   border-radius: 5px; }
 
+a:focus {
+  outline: none !important; }
+
+button:focus {
+  outline: none !important; }
+
 nav {
   font-family: "Philosopher", "Open Sans", sans-serif !important;
   font-size: 18px !important; }
@@ -45,6 +51,33 @@ nav {
   background-color: #3c3c3c;
   color: #fff;
   min-height: calc(285px); }
+
+.modal-backdrop {
+  background-color: #3f3f3f !important; }
+
+.modal-dialog .modal-header {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #151515; }
+  .modal-dialog .modal-header, .modal-dialog .modal-header button.close {
+    color: #E53D14;
+    opacity: 1;
+    text-shadow: none; }
+
+.modal-dialog .modal-body {
+  background-color: #3c3c3c;
+  text-align: center;
+  padding: 25px !important; }
+  .modal-dialog .modal-body button.btn {
+    margin-top: 1rem;
+    padding: 0.75rem 3rem;
+    background: #E53D14 !important;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: none; }
+    .modal-dialog .modal-body button.btn:hover {
+      background: #ce3712 !important; }
 
 .container.shows h1 {
   font-size: 0;

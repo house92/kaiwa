@@ -16,10 +16,21 @@ html body {
     padding-bottom: 5rem;
 }
 
-a.button {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+a {
+    &.button {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    &:focus {
+        outline: none !important;
+    }
+}
+
+button {
+    &:focus {
+        outline: none !important;
+    }
 }
 
 nav {
@@ -69,5 +80,47 @@ nav {
         background-color: #3c3c3c;
         color: #fff;
         min-height: calc(#{$min-welcome-height / 2 - 15px});
+    }
+}
+
+// !!!!!!!!!!
+//
+// MODALS
+//
+// !!!!!!!!!!
+
+.modal-backdrop {
+    background-color: #3f3f3f !important;
+}
+
+.modal-dialog {
+    .modal-header {
+        text-align: center;
+        text-transform: uppercase;
+        &, & button.close {
+            color: map-get($colours, brand-primary);
+            opacity: 1;
+            text-shadow: none;
+        }
+        background-color: map-get($colours, dark-background);
+    }
+    .modal-body {
+        background-color: map-get($colours, light-grey);
+        text-align: center;
+        padding: 25px !important;
+
+        button.btn {
+            margin-top: 1rem;
+            padding: 0.75rem 3rem;
+            background: map-get($colours, brand-primary) !important;
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: none;
+
+            &:hover {
+                background: darken(map-get($colours, brand-primary), 5%) !important;
+            }
+        }
     }
 }
