@@ -5,6 +5,13 @@ export function fetchShows(shows) {
     }
 }
 
+export function selectShow(show) {
+    return {
+        type: "SELECT_SHOW",
+        show
+    }
+}
+
 export function fetchGenres(genres) {
     return {
         type: "FETCH_GENRES",

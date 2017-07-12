@@ -3,8 +3,17 @@
 export function shows(state = [], action) {
     switch (action.type) {
         case "FETCH_SHOWS":
-            console.log("getting shows", action.shows);
             return action.shows;
+            break;
+        default:
+            return state;
+    }
+}
+
+export function show(state = [], action) {
+    switch (action.type) {
+        case "SELECT_SHOW":
+            return action.show;
             break;
         default:
             return state;

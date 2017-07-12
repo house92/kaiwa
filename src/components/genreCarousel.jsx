@@ -43,23 +43,25 @@ export default class GenreCarousel extends Component {
 
     handleSlide(e, callback) {
         const numShows = this.props.genre.shows.length;
-        if (numShows % this.state.slidesToShow != 0) {
-            const decorator = e.target.tagName == "BUTTON" ? e.target.closest("div") : e.target;
-            const numDisplays = Math.ceil(numShows / this.state.slidesToShow);
-            if (this.state.currentSlide / this.state.slidesToShow == numDisplays - 1 && decorator.dataset.direction == "next") {
-                this.setState({ slidesToScroll: numShows % this.state.slidesToShow }, callback);
-            } else if (this.state.currentSlide > 0 && this.state.currentSlide <= this.state.slidesToShow && decorator.dataset.direction == "previous") {
-                this.setState({ slidesToScroll: this.state.currentSlide }, callback);
-            } else {
-                this.setState({ slidesToScroll: this.state.slidesToShow }, callback);
-            }
+        if (numShows % this.state.slidesToShow == 0) {
+            this.setState({ slidesToScroll: this.state.slidesToShow }, callback);
+            return;
+        }
+        const decorator = e.target.tagName == "BUTTON" ? e.target.closest("div") : e.target;
+        const numDisplays = Math.ceil(numShows / this.state.slidesToShow);
+        if (this.state.currentSlide / this.state.slidesToShow == numDisplays - 1 && decorator.dataset.direction == "next") {
+            this.setState({ slidesToScroll: numShows % this.state.slidesToShow }, callback);
+        } else if (this.state.currentSlide > 0 && this.state.currentSlide <= this.state.slidesToShow && decorator.dataset.direction == "previous") {
+            this.setState({ slidesToScroll: this.state.currentSlide }, callback);
+        } else {
+            this.setState({ slidesToScroll: this.state.slidesToShow }, callback);
         }
     }
 
     render() {
         const genre = this.props.genre;
         const shows = genre.shows.map((show, i) => {
-            return <ShowContainer show={show} key={`show${i}`} />;
+            return <ShowContainer show={show} key={`show${i}`} selectShow={this.props.selectShow} />;
         });
 
         const handleSlide = this.handleSlide;

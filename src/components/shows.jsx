@@ -17,7 +17,7 @@ export default class Shows extends Component {
 
     render() {
         const genres = this.props.genres.map((genre, i) => {
-            return <GenreCarousel genre={genre} key={`genreCarousel${i}`} />;
+            return <GenreCarousel genre={genre} key={`genreCarousel${i}`} selectShow={this.props.selectShow} />;
         });
         return (
             <Grid className="shows">

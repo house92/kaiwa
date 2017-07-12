@@ -41,7 +41,8 @@ Layout.propTypes = {
 function mapStateToProps(state) {
     return {
         shows: state.shows,
-        genres: state.genres
+        genres: state.genres,
+        show: state.show
     }
 }
 

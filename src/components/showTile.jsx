@@ -4,7 +4,7 @@ export default class ShowTile extends Component {
     render() {
         const show = this.props.show;
         return (
-            <a className="show-tile" href={`/shows/${show.id}`}>
+            <a className="show-tile" href={`/shows/${show.id}`} onClick={this.props.handleClick}>
                 <img src={`/images/${show.image}`} />
                 <div>{show.name}</div>
             </a>

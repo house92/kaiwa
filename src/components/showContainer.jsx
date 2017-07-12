@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { browserHistory } from "react-router";
 import ShowTile from "./showTile";
 import ShowCard from "./showCard";
 
@@ -8,6 +10,20 @@ export default class ShowContainer extends Component {
         this.state = {
             expanded: false
         };
+        this.handleTileClick = this.handleTileClick.bind(this);
+    }
+
+    handleTileClick(e) {
+        e.preventDefault();
+        const hyperlink = e.target.closest("a").href;
+        axios.get(`/api/shows/${this.props.show.id}.json`)
+            .then(res => {
+                this.props.selectShow(res.data);
+                browserHistory.push(hyperlink);
+            })
+            .catch(err => {
+                console.error(err);
+            });
     }
 
     render() {
@@ -17,7 +33,7 @@ export default class ShowContainer extends Component {
             );
         } else {
             return (
-                <ShowTile show={this.props.show} />
+                <ShowTile show={this.props.show} handleClick={this.handleTileClick} />
             );
         }
     }
