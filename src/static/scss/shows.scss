@@ -155,12 +155,14 @@ $tile-margin: 2rem;
             text-transform: uppercase;
             font-size: 12px;
 
+            &:hover {
+                background-color: darken(map-get($colours, light-grey), 5%);
+            }
             &:focus {
                 background-color: map-get($colours, light-grey);
                 color: map-get($colours, brand-primary);
                 outline: none;
             }
-
             &:active, &:focus:active {
                 background-color: #1A1A1A;
                 color: map-get($colours, brand-primary);

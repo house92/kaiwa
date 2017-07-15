@@ -1,6 +1,10 @@
 import path from "path";
 import { Server } from "http";
 import Express from "express";
+import passport from "passport";
+import session from "express-session";
+import flash from "connect-flash";
+import bodyParser from "body-parser";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { match, RouterContext } from "react-router";
@@ -9,6 +13,7 @@ import routes from "./routes";
 import { store } from "./store";
 import serverRoutes from "./server/routes";
 import NotFoundPage from "./components/notFoundPage";
+require("../config/passport.js");
 
 // initialize the server and configure support for ejs templates
 const app = new Express();
@@ -18,6 +23,17 @@ app.set("views", path.join(__dirname, "views"));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, "static")));
+
+//For BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(flash());
+
+// For Passport
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 // Server-side logic for routes
 app.use("/", serverRoutes);

@@ -11,11 +11,11 @@ export default class LoginModal extends Component {
                 <Modal.Body>
                     <Form action="/users/login" method="POST">
                         <FormGroup controlId="email">
-                            <FormControl type="email" name="user[email]" placeholder="E-mail address" required />
+                            <FormControl type="email" name="email" placeholder="E-mail address" required />
                         </FormGroup>
 
                         <FormGroup controlId="password">
-                            <FormControl type="password" name="user[password]" placeholder="Password" required />
+                            <FormControl type="password" name="password" placeholder="Password" required />
                         </FormGroup>
 
                         <Button type="submit">Log in</Button>

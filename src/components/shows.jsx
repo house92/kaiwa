@@ -6,7 +6,7 @@ import GenreCarousel from "./genreCarousel";
 
 export default class Shows extends Component {
     componentWillMount() {
-        axios.get("/api/genres.json")
+        axios.get("/genres.json")
             .then(res => {
                 this.props.fetchGenres(res.data);
             })

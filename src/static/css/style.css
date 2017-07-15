@@ -180,6 +180,8 @@ nav {
       border-color: #1A1A1A;
       text-transform: uppercase;
       font-size: 12px; }
+      .show-page .buttons .btn:hover {
+        background-color: #2f2f2f; }
       .show-page .buttons .btn:focus {
         background-color: #3c3c3c;
         color: #E53D14;

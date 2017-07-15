@@ -16,7 +16,7 @@ export default class ShowContainer extends Component {
     handleTileClick(e) {
         e.preventDefault();
         const hyperlink = e.target.closest("a").href;
-        axios.get(`/api/shows/${this.props.show.id}.json`)
+        axios.get(`/shows/${this.props.show.id}.json`)
             .then(res => {
                 this.props.selectShow(res.data);
                 browserHistory.push(hyperlink);

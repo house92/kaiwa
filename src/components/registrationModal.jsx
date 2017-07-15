@@ -9,25 +9,25 @@ export default class RegistrationModal extends Component {
                     <Modal.Title>Registration</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form action="/users/register" method="POST">
+                    <Form action="/users/registration" method="POST">
                         <FormGroup controlId="firstName">
-                            <FormControl type="text" name="user[firstName]" placeholder="First name" required />
+                            <FormControl type="text" name="firstName" placeholder="First name" required />
                         </FormGroup>
 
                         <FormGroup controlId="lastName">
-                            <FormControl type="text" name="user[lastName]" placeholder="Last name" required />
+                            <FormControl type="text" name="lastName" placeholder="Last name" required />
                         </FormGroup>
 
                         <FormGroup controlId="email">
-                            <FormControl type="email" name="user[email]" placeholder="E-mail address" required />
+                            <FormControl type="email" name="email" placeholder="E-mail address" required />
                         </FormGroup>
 
                         <FormGroup controlId="password">
-                            <FormControl type="password" name="user[password]" placeholder="Password" required />
+                            <FormControl type="password" name="password" placeholder="Password" required />
                         </FormGroup>
 
-                        <FormGroup controlId="confirmed_password">
-                            <FormControl type="password" name="user[confirmed_password]" placeholder="Confirm password" required />
+                        <FormGroup controlId="confirmedPassword">
+                            <FormControl type="password" name="confirmedPassword" placeholder="Confirm password" required />
                         </FormGroup>
 
                         <Button type="submit">Sign up</Button>
