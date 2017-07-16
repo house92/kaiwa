@@ -7,7 +7,8 @@ import rootReducer from "./reducers/index";
 const defaultState = {
     shows: [],
     genres: [],
-    show: {}
+    show: {},
+    modal: null
 };
 
 export const store = compose(applyMiddleware(thunk))(createStore)(rootReducer, defaultState);

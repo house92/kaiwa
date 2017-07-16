@@ -18,3 +18,17 @@ export function fetchGenres(genres) {
         genres
     }
 }
+
+export function openModal(modal) {
+    return {
+        type: "OPEN_MODAL",
+        modal
+    }
+}
+
+export function closeModal(modal) {
+    return {
+        type: "CLOSE_MODAL",
+        modal
+    }
+}
