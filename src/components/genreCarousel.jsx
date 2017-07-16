@@ -101,7 +101,7 @@ export default class GenreCarousel extends Component {
                 }
             },
             {
-                component: React.createClass({
+                component: createReactClass({
                     render() {
                         var self = this;
                         var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);

@@ -3,6 +3,18 @@ import { Grid, Row, Col, Button, Glyphicon } from "react-bootstrap";
 import axios from "axios";
 
 export default class ShowPage extends Component {
+    componentDidMount() {
+        if (Object.keys(this.props.show).length) return;
+        const showId = window.location.pathname.split("/")[2];
+        axios.get(`/shows/${showId}.json`)
+            .then(res => {
+                this.props.selectShow(res.data);
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }
+
     render() {
         const show = this.props.show;
         if (show && Object.keys(show).length) {

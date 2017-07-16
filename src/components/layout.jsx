@@ -38,7 +38,7 @@ class Layout extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav>
-                            <NavItem eventKey={1}><Link to="/shows">Shows</Link></NavItem>
+                            <li role="presentation"><Link to="/shows">Shows</Link></li>
                             <NavItem eventKey={2} href="/">Community</NavItem>
                         </Nav>
                         {userNav}
