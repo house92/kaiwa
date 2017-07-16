@@ -7,6 +7,5 @@ exports.getShows = async (req, res) => {
 }
 
 exports.getShow = async (req, res) => {
-    console.log(req);
     res.json(await Show.findOne({ where: { id: req.params.id }, include: [Genre]}));
 }

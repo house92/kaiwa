@@ -32,3 +32,10 @@ export function closeModal(modal) {
         modal
     }
 }
+
+export function updateUserInState(user) {
+    return {
+        type: "UPDATE_USER_IN_STATE",
+        user
+    }
+}

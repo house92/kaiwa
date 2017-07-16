@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 import showsController from "./controllers/showsController";
 import genresController from "./controllers/genresController";
+import usersController from "./controllers/usersController";
 import authController from "./controllers/authController";
 import { catchErrors } from "./handlers/errorHandlers";
 import passport from "passport";
@@ -15,6 +16,7 @@ router.get("/genres.json", catchErrors(genresController.getGenres));
 
 // User routes
 router.get("/users/logout", authController.logout);
+router.get("/users/:id", catchErrors(usersController.getUser));
 
 router.post("/users/registration",
     authController.confirmPasswordMatch,
@@ -23,9 +25,6 @@ router.post("/users/registration",
         failureFlash: true
     }
 ));
-router.post("/users/login", passport.authenticate("local-login", {
-    successRedirect: "back",
-    failureFlash: true
-}));
+router.post("/users/login.json", authController.ajaxLoginAuthentication);
 
 module.exports = router;

@@ -60,8 +60,7 @@ passport.use("local-login", new Strategy(
 
         sequelize.sync().then(() => {
             User.findOne({ where: {email: req.body.email} })
-                .then(function(user) {
-                    console.log(user);
+                .then(user => {
                     if (!user) {
                         return done(null, false, {
                             message: "E-mail address not recognised"
@@ -74,7 +73,7 @@ passport.use("local-login", new Strategy(
                     }
                     const userinfo = user.get();
                     return done(null, userinfo);
-                }).catch(function(err) {
+                }).catch(err => {
                     console.log("Error:", err);
                     return done(null, false, {
                         message: "Something went wrong"
@@ -89,11 +88,13 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => {
-        if (user) {
-            done(null, user.get());
-        } else {
-            done(user.errors, null);
-        }
+    sequelize.sync().then(() => {
+        User.findById(id).then(user => {
+            if (user) {
+                done(null, user.get());
+            } else {
+                done(user.errors, null);
+            }
+        });
     });
 });

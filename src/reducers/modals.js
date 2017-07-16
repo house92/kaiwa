@@ -4,7 +4,7 @@ export function modal(state = [], action) {
             return action.modal;
             break;
         case "CLOSE_MODAL":
-            return state ? state.modal == action.modal ? "" : state.modal : "";
+            return state ? state == action.modal ? "" : state : "";
             break;
         default:
             return state;

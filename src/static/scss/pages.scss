@@ -24,6 +24,10 @@ a {
     }
     &:focus {
         outline: none !important;
+        text-decoration: none !important;
+    }
+    &:hover {
+        text-decoration: none !important;
     }
 }
 

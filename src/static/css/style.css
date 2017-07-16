@@ -16,7 +16,11 @@ a.button {
   border-radius: 5px; }
 
 a:focus {
-  outline: none !important; }
+  outline: none !important;
+  text-decoration: none !important; }
+
+a:hover {
+  text-decoration: none !important; }
 
 button:focus {
   outline: none !important; }

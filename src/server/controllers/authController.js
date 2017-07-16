@@ -24,3 +24,24 @@ exports.confirmPasswordMatch = (req, res, next) => {
   req.flash("error", "Passwords do not match");
   res.redirect("back");
 };
+
+exports.ajaxLoginAuthentication = (req, res, next) => {
+  passport.authenticate("local-login", (err, user, info) => {
+    if (err) return next(err);
+    if (!user) {
+      console.log(info);
+        res.json(403, {
+            message: "No user found"
+        });
+    }
+
+    // Manually establish the session...
+    req.login(user, (err) => {
+        if (err) return next(err);
+        res.json({
+            user: user,
+            message: 'User authenticated'
+        });
+    });
+  })(req, res, next);
+}

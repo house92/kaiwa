@@ -9,7 +9,7 @@ export default class LoginModal extends Component {
                     <Modal.Title>Login</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form action="/users/login" method="POST">
+                    <Form action="/users/login.json" method="POST">
                         <FormGroup controlId="email">
                             <FormControl type="email" name="email" placeholder="E-mail address" required />
                         </FormGroup>
@@ -18,7 +18,7 @@ export default class LoginModal extends Component {
                             <FormControl type="password" name="password" placeholder="Password" required />
                         </FormGroup>
 
-                        <Button type="submit">Log in</Button>
+                        <Button type="submit" onClick={this.props.submitForm}>Log in</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

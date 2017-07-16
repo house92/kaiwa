@@ -8,7 +8,8 @@ const defaultState = {
     shows: [],
     genres: [],
     show: {},
-    modal: null
+    modal: null,
+    user: {}
 };
 
 export const store = compose(applyMiddleware(thunk))(createStore)(rootReducer, defaultState);

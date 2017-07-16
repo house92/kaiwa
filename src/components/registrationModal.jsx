@@ -30,7 +30,7 @@ export default class RegistrationModal extends Component {
                             <FormControl type="password" name="confirmedPassword" placeholder="Confirm password" required />
                         </FormGroup>
 
-                        <Button type="submit">Sign up</Button>
+                        <Button type="submit" onClick={this.props.submitForm}>Sign up</Button>
                     </Form>
                 </Modal.Body>
             </Modal>
