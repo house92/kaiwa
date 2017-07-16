@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/genreCarousel.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/components</a> genreCarousel.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.9% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.9% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from "react";
+import Carousel from "nuka-carousel";
+import createReactClass from "create-react-class";
+import ShowContainer from "./showContainer";
+&nbsp;
+export default class GenreCarousel extends Component {
+<span class="fstat-no" title="function not covered" >    constructor(</span>props) <span class="cstat-no" title="statement not covered" >{</span>
+        super(props);
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            currentSlide: 0
+        };
+<span class="cstat-no" title="statement not covered" >        this.setSlidesToScroll = this.setSlidesToScroll.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >        this.setSlidesAccordingToScreenSize = this.setSlidesAccordingToScreenSize.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >        this.handleSlide = this.handleSlide.bind(this);</span>
+    }
+&nbsp;
+    setSlidesToScroll(index) {
+<span class="cstat-no" title="statement not covered" >        this.setState({currentSlide: index});</span>
+    }
+&nbsp;
+    setSlidesAccordingToScreenSize() {
+<span class="cstat-no" title="statement not covered" >        if (window.innerWidth &gt; 1200) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({slidesToShow: 5, slidesToScroll: 5})</span>
+        } else <span class="cstat-no" title="statement not covered" >if (window.innerWidth &gt; 992) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({slidesToShow: 4, slidesToScroll: 4})</span>
+        } else <span class="cstat-no" title="statement not covered" >if (window.innerWidth &gt; 768) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({slidesToShow: 3, slidesToScroll: 3})</span>
+        }
+    }
+&nbsp;
+    componentDidMount() <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        this.setSlidesAccordingToScreenSize();</span>
+        l</span>et <span class="cstat-no" title="statement not covered" >delay;
+<span class="cstat-no" title="statement not covered" >        window.addEventListener("resize", <span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >            clearTimeout(delay);</span>
+<span class="cstat-no" title="statement not covered" >            delay = setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >                this.setSlidesAccordingToScreenSize();</span>
+            }, 10);
+        });
+    }
+&nbsp;
+    handleSlide(e, callback) {
+        c</span>onst numShows = <span class="cstat-no" title="statement not covered" >this.props.genre.shows.length;
+<span class="cstat-no" title="statement not covered" >        if (numShows % this.state.slidesToShow == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({ slidesToScroll: this.state.slidesToShow }, callback);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+        c</span>onst decorator = <span class="cstat-no" title="statement not covered" >e.target.tagName == "BUTTON" ? e.target.closest("div") : e.target;
+        c</span>onst numDisplays = <span class="cstat-no" title="statement not covered" >Math.ceil(numShows / this.state.slidesToShow);
+<span class="cstat-no" title="statement not covered" >        if (this.state.currentSlide / this.state.slidesToShow == numDisplays - 1 &amp;&amp; decorator.dataset.direction == "next") {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({ slidesToScroll: numShows % this.state.slidesToShow }, callback);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.state.currentSlide &gt; 0 &amp;&amp; this.state.currentSlide &lt;= this.state.slidesToShow &amp;&amp; decorator.dataset.direction == "previous") {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({ slidesToScroll: this.state.currentSlide }, callback);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.setState({ slidesToScroll: this.state.slidesToShow }, callback);</span>
+        }
+    }
+&nbsp;
+    render() <span class="cstat-no" title="statement not covered" >{</span>
+        c</span>onst genre = <span class="cstat-no" title="statement not covered" >this.props.genre;
+        c</span>onst shows = <span class="cstat-no" title="statement not covered" >genre.shows.map(<span class="fstat-no" title="function not covered" >(</span>show, i) =&gt; {
+<span class="cstat-no" title="statement not covered" >            return &lt;ShowContainer show={show} key={`show${i}`} selectShow={this.props.selectShow} /&gt;;</span>
+        });
+&nbsp;
+        c</span>onst handleSlide = <span class="cstat-no" title="statement not covered" >this.handleSlide;
+        c</span>onst carouselDecorators = <span class="cstat-no" title="statement not covered" >[
+            {
+                component: createReactClass(<span class="fstat-no" title="function not covered" >{</span>
+                    render() <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+                            &lt;div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} data-direction="previous" onClick={<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e =&gt; handleSlide(e, this.props.previousSlide)}&gt;</span></span>
+                                &lt;button style={{border: "none", background: "none", fontSize: "24px", marginTop: "calc(15rem + 10.5%)"}}&gt;❮&lt;/button&gt;
+                            &lt;/div&gt;
+                        );
+                    }
+                }),
+                position: "CenterLeft",
+                style: {
+                    top: "-63px",
+                    left: 0,
+                    height: "calc(100% + 63px)"
+                }
+            },
+            {
+                component: createReactClass(<span class="fstat-no" title="function not covered" >{</span>
+                    render() <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+                            &lt;div style={{height: "100%", background: "rgba(250, 250, 250, 0.1)"}} data-direction="next" onClick={<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e =&gt; handleSlide(e, this.props.nextSlide)}&gt;</span></span>
+                                &lt;button style={{border: "none", background: "none", fontSize: "24px", marginTop: "calc(15rem + 10.5%)"}}&gt;❯&lt;/button&gt;
+                            &lt;/div&gt;
+                        );
+                    }
+                }),
+                position: "CenterRight",
+                style: {
+                    top: "-63px",
+                    right: 0,
+                    height: "calc(100% + 63px)"
+                }
+            },
+            {
+                component: createReactClass(<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span></span>
+                    render() {
+                        v</span>ar self = <span class="cstat-no" title="statement not covered" >this;
+                        v</span>ar indexes = <span class="cstat-no" title="statement not covered" >this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
+<span class="cstat-no" title="statement not covered" >                        return (</span>
+                            &lt;ul style={self.getListStyles()}&gt;
+                                {
+                                    indexes.map(<span class="fstat-no" title="function not covered" >function(</span>index) {
+<span class="cstat-no" title="statement not covered" >                                        return (</span>
+                                            &lt;li style={self.getListItemStyles()} key={index}&gt;
+                                                &lt;button
+                                                    style={self.getButtonStyles(self.props.currentSlide === index)}
+                                                    onClick={self.props.goToSlide.bind(null, index)}&gt;
+                                                    &amp;bull;
+                                                &lt;/button&gt;
+                                            &lt;/li&gt;
+                                        )
+                                    })
+                                }
+                            &lt;/ul&gt;
+                        )
+                    },
+                    getIndexes(count, inc) {
+                        v</span>ar arr = <span class="cstat-no" title="statement not covered" >[];
+<span class="cstat-no" title="statement not covered" >                        for (var i = 0; i &lt; count; i += inc) {</span>
+<span class="cstat-no" title="statement not covered" >                            arr.push(i);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        return arr;</span>
+                    },
+                    getListStyles() {
+<span class="cstat-no" title="statement not covered" >                        return {</span>
+                            position: 'relative',
+                            margin: 0,
+                            top: -10,
+                            padding: 0
+                        }
+                    },
+                    getListItemStyles() {
+<span class="cstat-no" title="statement not covered" >                        return {</span>
+                            listStyleType: 'none',
+                            display: 'inline-block'
+                        }
+                    },
+                    getButtonStyles(active) {
+<span class="cstat-no" title="statement not covered" >                        return {</span>
+                            border: 0,
+                            background: 'transparent',
+                            color: 'black',
+                            cursor: 'pointer',
+                            padding: 10,
+                            outline: 0,
+                            fontSize: 24,
+                            opacity: active ? 1 : 0.5
+                        }
+                    }
+                }),
+                position: 'BottomCenter'
+            }
+        ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;div className="genre"&gt;
+                &lt;h2&gt;{genre.name}&lt;/h2&gt;
+                &lt;Carousel
+                    slidesToShow={this.state.slidesToShow}
+                    slidesToScroll={this.state.slidesToScroll}
+                    cellSpacing={5}
+                    wrapAround={true}
+                    afterSlide={this.setSlidesToScroll}
+                    decorators={carouselDecorators}
+                &gt;
+                    {shows}
+                &lt;/Carousel&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jul 16 2017 18:53:53 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
